@@ -1,3 +1,11 @@
 body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+}
+.search-bar {
+  border: none;
+  outline: none;
+  width: 400px;
 }
