@@ -4,8 +4,20 @@ body {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+a {
+  text-decoration: none;
+  color: black;
+}
+.logo {
+  padding-top: 0.5em;
+}
 .search-bar {
   border: none;
   outline: none;
-  width: 400px;
+  max-width: 350px;
+}
+@media (min-width: 1280px) {
+  .search-bar {
+    min-width: 450px;
+  }
 }

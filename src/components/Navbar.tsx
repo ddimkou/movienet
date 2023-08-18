@@ -9,11 +9,10 @@ const Navbar = () => {
       direction="row"
       justifyContent="space-between"
       alignItems="center"
-      paddingX={5}
-      paddingY={1}
+      paddingX={2}
     >
       <Link to="/">
-        <img src={logo} height={55} />
+        <img src={logo} height={55} className="logo" />
       </Link>
       <SearchBar />
     </Stack>

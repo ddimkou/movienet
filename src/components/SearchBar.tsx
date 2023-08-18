@@ -11,7 +11,6 @@ const SearchBar = () => {
         pl: 2,
         boxShadow: "none",
         mr: { sm: 5 },
-        // width: "350px",
       }}
     >
       <input className="search-bar" placeholder="Search" />
