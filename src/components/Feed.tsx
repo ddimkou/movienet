@@ -1,4 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
+import Sidebar from "./Sidebar";
+import MovieGrid from "./MovieGrid";
 
 const Feed = () => {
   return (
@@ -10,7 +12,7 @@ const Feed = () => {
           px: { sx: 0, md: 2 },
         }}
       >
-        Sidebar
+        <Sidebar />
         <Typography
           className="copyright"
           variant="body2"
@@ -19,7 +21,9 @@ const Feed = () => {
           Copyright 2023 ddimkou
         </Typography>
       </Box>
-      <Box>Main feed</Box>
+      <Box>
+        <MovieGrid />
+      </Box>
     </Stack>
   );
 };
