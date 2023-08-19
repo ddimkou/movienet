@@ -7,7 +7,7 @@ const Feed = () => {
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
       <Box
         sx={{
-          height: { sx: "auto", md: "92.9vh" },
+          height: { sx: "auto", md: "92.8vh" },
           borderRight: "1px solid #4d4d4d",
           px: { sx: 0, md: 2 },
         }}

@@ -1,36 +1,7 @@
-import React, { useEffect, useState } from "react";
-import apiClient from "../services/api-client";
-
-interface TitleText {
-  text: string;
-}
-
-interface Movie {
-  id: string;
-  titleText: TitleText;
-}
-
-interface FetchMoviesResponse {
-  entries: number;
-  results: Movie[];
-}
+import useMovies from "../hooks/useMovies";
 
 const MovieGrid = () => {
-  const [movies, setMovies] = useState<Movie[]>([]);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    apiClient
-      .get<FetchMoviesResponse>("/titles")
-      .then((res) => {
-        if (res.data && res.data.results) {
-          setMovies(res.data.results);
-        }
-      })
-      .catch((error) => {
-        setError(`There was an error ${error}`);
-      });
-  }, []); // Empty array to run the effect only once
+  const { movies, error } = useMovies();
 
   return (
     <div>
