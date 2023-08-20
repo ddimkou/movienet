@@ -9,9 +9,10 @@ const MovieGrid = () => {
     <Stack
       direction="row"
       flexWrap="wrap"
-      justifyContent="start"
-      alignItems="start"
-      gap={2}
+      justifyContent="center"
+      alignItems="center"
+      gap={5}
+      pt={8}
     >
       {error ? (
         <div>Error: {error}</div>
