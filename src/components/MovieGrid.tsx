@@ -11,7 +11,7 @@ const MovieGrid = () => {
       flexWrap="wrap"
       justifyContent="center"
       alignItems="center"
-      gap={5}
+      gap={3}
       pt={8}
     >
       {error ? (

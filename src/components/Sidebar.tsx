@@ -7,15 +7,19 @@ const Sidebar = () => {
       sx={{
         overflowY: "none",
         textAlign: "center",
-        py: "2em",
-        height: { sx: "auto", md: "95%" },
+        height: { sx: "auto", md: "100vh" },
+        flexDirection: {
+          md: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        },
       }}
     >
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
-      <div>5</div>
+      <div>HORRORHORROR</div>
+      <div>2HORROR</div>
+      <div>3HORRORHORROR</div>
+      <div>4HORRORHORROR</div>
+      <div>5HORROR</div>
     </Stack>
   );
 };
