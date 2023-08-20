@@ -2,7 +2,7 @@ import { Card, CardContent, CardMedia, Stack, Typography } from "@mui/material";
 import { Movie } from "../hooks/useMovies";
 import fetchRating from "../hooks/fetchRating";
 import { useEffect, useState } from "react";
-
+import noImage from "../assets/Image_not_available.png";
 interface Props {
   movie: Movie;
 }
@@ -27,7 +27,11 @@ const MovieCard = ({ movie }: Props) => {
         borderRadius: "4%",
       }}
     >
-      <CardMedia component="img" height="300" image={movie.primaryImage?.url} />
+      <CardMedia
+        component="img"
+        height="300"
+        image={movie.primaryImage?.url || noImage}
+      />
       <CardContent sx={{ backgroundColor: "#FFF6E0", height: "106px" }}>
         <Typography variant="h5">{movie?.titleText?.text}</Typography>
 
