@@ -10,6 +10,7 @@ const Navbar = () => {
       justifyContent="space-between"
       alignItems="center"
       paddingX={2}
+      sx={{ backgroundColor: "#272829" }}
     >
       <Link to="/">
         <img src={logo} height={55} className="logo" />

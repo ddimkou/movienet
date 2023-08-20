@@ -11,7 +11,7 @@ const Feed = () => {
     >
       <Box
         sx={{
-          borderRight: "1px solid #4d4d4d",
+          borderRight: "1px solid #FFF6E0",
           px: { xs: 0, md: 2 },
         }}
       >

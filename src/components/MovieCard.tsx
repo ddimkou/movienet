@@ -11,12 +11,12 @@ const MovieCard = ({ movie }: Props) => {
       sx={{
         width: { xs: "100%", sm: "360px", md: "320px" },
         boxShadow: "none",
-        borderRadius: 0,
+        borderRadius: "5%",
       }}
     >
       <CardMedia component="img" height="300" image={movie.primaryImage?.url} />
-      <CardContent sx={{ backgroundColor: "#1E1E1E", height: "106px" }}>
-        <Typography>{movie?.titleText?.text}</Typography>
+      <CardContent sx={{ backgroundColor: "#FFF6E0", height: "106px" }}>
+        <Typography variant="h5">{movie?.titleText?.text}</Typography>
       </CardContent>
     </Card>
   );
