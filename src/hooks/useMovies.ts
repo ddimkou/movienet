@@ -5,10 +5,13 @@ import { CanceledError } from "axios";
 interface TitleText {
   text: string;
 }
-
-interface Movie {
+interface PrimaryImage {
+  url: string;
+}
+export interface Movie {
   id: string;
   titleText: TitleText;
+  primaryImage: PrimaryImage;
 }
 
 interface FetchMoviesResponse {
