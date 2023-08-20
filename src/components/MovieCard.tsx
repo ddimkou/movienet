@@ -11,7 +11,7 @@ const MovieCard = ({ movie }: Props) => {
       sx={{
         width: { xs: "100%", sm: "360px", md: "320px" },
         boxShadow: "none",
-        borderRadius: "5%",
+        borderRadius: "3%",
       }}
     >
       <CardMedia component="img" height="300" image={movie.primaryImage?.url} />

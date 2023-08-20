@@ -6,7 +6,7 @@ const Feed = () => {
   return (
     <Stack
       direction={{ xs: "column", md: "row" }}
-      height="100vh"
+      height="auto"
       overflow="hidden" // Add this to prevent the extra scrollbar
     >
       <Box
