@@ -6,8 +6,8 @@ const Feed = () => {
   return (
     <Stack
       direction={{ xs: "column", md: "row" }}
-      height="100vh"
-      overflow="hidden"
+      height="auto"
+      // overflow="hidden"
     >
       <Box
         sx={{
@@ -22,7 +22,7 @@ const Feed = () => {
         sx={{
           display: "flex",
           flexDirection: "column",
-          overflowY: "scroll",
+          // overflowY: "scroll",
           flex: 1,
         }}
       >

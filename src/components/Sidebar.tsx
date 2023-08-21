@@ -44,6 +44,7 @@ const Sidebar = () => {
   return (
     <Stack
       className="sidebar"
+      minWidth="10em"
       sx={{
         position: "sticky",
         top: 0,
