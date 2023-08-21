@@ -1,68 +1,49 @@
-// import { Stack } from "@mui/material";
+// import { Box, Stack } from "@mui/material";
+// import useGenres from "../hooks/useGenres";
 
 // const Sidebar = () => {
+//   const { genres, error } = useGenres();
 //   return (
 //     <Stack
-//       direction="row"
-//       sx={{
-//         overflowY: "none",
-//         textAlign: "center",
-//         height: { sx: "auto", md: "100vh" },
-//         flexDirection: {
-//           md: "column",
-//           justifyContent: "center",
-//           alignItems: "center",
-//         },
-//       }}
-//     >
-//       <div>HORRORHORROR</div>
-//       <div>2HORROR</div>
-//       <div>3HORRORHORROR</div>
-//       <div>4HORRORHORROR</div>
-//       <div>5HORROR</div>
-//     </Stack>
-//   );
-// };
-
-// export default Sidebar;
-
-// import { Stack } from "@mui/material";
-
-// const Sidebar = () => {
-//   return (
-//     <Stack
-//       direction="row"
+//       className="sidebar"
 //       sx={{
 //         position: "sticky",
 //         top: 0,
 //         zIndex: 1,
-//         overflowY: "none",
+//         overflowY: "auto",
 //         textAlign: "center",
 //         height: { sx: "auto", md: "100vh" },
 //         flexDirection: {
+//           xs: "row",
 //           md: "column",
-//           justifyContent: "center",
-//           alignItems: "center",
+//         },
+//         justifyContent: {
+//           xs: "flex-start",
+//           md: "center",
+//         },
+//         alignItems: {
+//           xs: "center",
+//           md: "center",
 //         },
 //       }}
 //     >
-//       <div>HORRORHORROR</div>
-//       <div>2HORROR</div>
-//       <div>3HORRORHORROR</div>
-//       <div>4HORRORHORROR</div>
-//       <div>5HORROR</div>
+//       {genres.map((genre, index) => (
+//         <div key={index}>{genre}</div>
+//       ))}
+//       {error && <Box>{error}</Box>}
 //     </Stack>
 //   );
 // };
 
 // export default Sidebar;
 
-import { Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
+import genres from "../services/genres";
 
 const Sidebar = () => {
   return (
     <Stack
-      direction="row"
+      className="sidebar"
       sx={{
         position: "sticky",
         top: 0,
@@ -84,11 +65,11 @@ const Sidebar = () => {
         },
       }}
     >
-      <div>HORRORHORROR</div>
-      <div>2HORROR</div>
-      <div>3HORRORHORROR</div>
-      <div>4HORRORHORROR</div>
-      <div>5HORROR</div>
+      {genres.map((genre, index) => (
+        <Box className="genre-box" key={index}>
+          {genre}
+        </Box>
+      ))}
     </Stack>
   );
 };
