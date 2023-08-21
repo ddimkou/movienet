@@ -16,6 +16,14 @@ a {
   outline: none;
   max-width: 350px;
 }
+/* searchbar on mobile-s */
+@media screen and (max-width: 350px) {
+  .search-bar {
+    margin-bottom: 10px;
+    margin-right: 0;
+    width: 120px;
+  }
+}
 @media (min-width: 1280px) {
   .search-bar {
     min-width: 450px;
