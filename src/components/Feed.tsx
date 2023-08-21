@@ -6,8 +6,8 @@ const Feed = () => {
   return (
     <Stack
       direction={{ xs: "column", md: "row" }}
-      height="auto"
-      overflow="hidden" // Add this to prevent the extra scrollbar
+      height="100vh"
+      overflow="hidden"
     >
       <Box
         sx={{
@@ -21,8 +21,9 @@ const Feed = () => {
         p={2}
         sx={{
           display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "start",
+          flexDirection: "column",
+          overflowY: "scroll",
+          flex: 1,
         }}
       >
         <MovieGrid />

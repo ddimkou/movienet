@@ -21,3 +21,13 @@ a {
     min-width: 450px;
   }
 }
+
+/* scrollbar (sidebar is sticky and had another scrollbar)*/
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
