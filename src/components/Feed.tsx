@@ -1,6 +1,7 @@
 import { Box, Stack } from "@mui/material";
 import Sidebar from "./Sidebar";
 import MovieGrid from "./MovieGrid";
+// import Test from "./Test";
 
 const Feed = () => {
   return (
@@ -16,6 +17,7 @@ const Feed = () => {
         }}
       >
         <Sidebar />
+        {/* <Test></Test> */}
       </Box>
       <Box
         p={2}

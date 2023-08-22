@@ -37,7 +37,7 @@
 
 // export default Sidebar;
 
-import { Box, Stack } from "@mui/material";
+import { Stack } from "@mui/material";
 import genres from "../services/genres";
 
 const Sidebar = () => {
@@ -67,9 +67,9 @@ const Sidebar = () => {
       }}
     >
       {genres.map((genre, index) => (
-        <Box className="genre-box" key={index}>
+        <button className="genre-btn" key={index}>
           {genre}
-        </Box>
+        </button>
       ))}
     </Stack>
   );
