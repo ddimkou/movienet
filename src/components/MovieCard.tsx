@@ -76,7 +76,7 @@ import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { Movie } from "../hooks/useMovies";
 
 import noImage from "../assets/Image_not_available.png";
-import MovieDetail from "./MovieDetail";
+// import MovieDetail from "./MovieDetail";
 interface Props {
   movie: Movie;
 }
@@ -98,7 +98,7 @@ const MovieCard = ({ movie }: Props) => {
       <CardContent sx={{ backgroundColor: "#FFF6E0", height: "106px" }}>
         <Typography variant="h5">{movie?.titleText?.text}</Typography>
 
-        <MovieDetail movie={movie} />
+        {/* <MovieDetail movie={movie} /> */}
       </CardContent>
     </Card>
   );
