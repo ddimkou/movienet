@@ -1,5 +1,5 @@
 import axios from "axios";
-import apiKey from "./apiKey";
+import apiKey from "../services/apiKey";
 
 const useMovies = axios.create({
   baseURL: "https://api.themoviedb.org/3/movie",
