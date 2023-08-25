@@ -1,18 +1,8 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import Sidebar from "./Sidebar";
-import { useState } from "react";
-import useMoviesByGenre from "../hooks/useMoviesByGenre";
-import MoviesDisplay from "./MoviesDisplay";
+import MovieGrid from "./MovieGrid";
 
 const Feed = () => {
-  const [selectedGenre, setSelectedGenre] = useState<string | null>(null);
-
-  // Create a Genre object from the selectedGenre string
-  const genreFilter = selectedGenre ? { genre: selectedGenre } : null;
-
-  // Call the hook with the genreFilter object
-  const { genreSearch } = useMoviesByGenre(genreFilter);
-
   return (
     <Stack direction={{ xs: "column", md: "row" }} height="auto">
       <Box
@@ -21,17 +11,10 @@ const Feed = () => {
           px: { xs: 0, md: 2 },
         }}
       >
-        <Sidebar
-          selectedGenre={selectedGenre}
-          setSelectedGenre={setSelectedGenre}
-        />
+        <Sidebar />
       </Box>
       <Box p={2} sx={{ display: "flex", flexDirection: "column", flex: 1 }}>
-        {selectedGenre && genreSearch.length > 0 ? (
-          <MoviesDisplay movies={genreSearch} /> // Pass genreSearch array to MoviesDisplay
-        ) : (
-          <Typography variant="h6">Select a genre to see movies</Typography>
-        )}
+        <MovieGrid />
       </Box>
     </Stack>
   );
