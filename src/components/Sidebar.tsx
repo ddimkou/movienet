@@ -1,5 +1,5 @@
 import { Stack } from "@mui/material";
-
+import genres from "../services/genres";
 const Sidebar = () => {
   return (
     <Stack
@@ -26,7 +26,12 @@ const Sidebar = () => {
         },
       }}
     >
-      SideBar
+      {genres.map((genre) => (
+        // <div key={genre.id}>{genre.name}</div>
+        <button className="genre-btn" key={genre.id}>
+          {genre.name}
+        </button>
+      ))}
     </Stack>
   );
 };
