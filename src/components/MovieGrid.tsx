@@ -1,7 +1,7 @@
 import { Stack, Typography } from "@mui/material";
-import MovieCard from "./MovieCard";
 
 import useMovies from "../hooks/useMovies";
+import MovieCard from "./MovieCard";
 
 const MovieGrid = () => {
   const { movies, error } = useMovies();
@@ -14,14 +14,11 @@ const MovieGrid = () => {
       gap={3}
       pt={8}
     >
-      movies Grid here
-      <MovieCard />
       {error && <Typography>{error}</Typography>}
-      <ul>
-        {movies.map((movie) => (
-          <li key={movie.id}>{movie.title}</li>
-        ))}
-      </ul>
+
+      {movies.map((movie) => (
+        <MovieCard key={movie.id} movie={movie} />
+      ))}
     </Stack>
   );
 };
