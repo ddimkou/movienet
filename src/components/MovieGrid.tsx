@@ -1,27 +1,10 @@
-import { Stack } from "@mui/material";
-// import MovieCard from "./MovieCard";
-import { useState, useEffect } from "react";
-import apiClient from "../services/api-client";
+import { Stack, Typography } from "@mui/material";
+import MovieCard from "./MovieCard";
 
-interface Movie {
-  id: number;
-  title: string;
-}
-interface FetchMoviesResponse {
-  results: Movie[];
-}
+import useMovies from "../hooks/useMovies";
 
 const MovieGrid = () => {
-  const [movies, setMovies] = useState<Movie[]>([]);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    apiClient
-      .get<FetchMoviesResponse>("/movie/popular")
-      .then((res) => setMovies(res.data.results))
-      .catch((error) => setError(error.message));
-  }, []);
-
+  const { movies, error } = useMovies();
   return (
     <Stack
       direction="row"
@@ -31,8 +14,9 @@ const MovieGrid = () => {
       gap={3}
       pt={8}
     >
-      {/* movies Grid here
-      <MovieCard /> */}
+      movies Grid here
+      <MovieCard />
+      {error && <Typography>{error}</Typography>}
       <ul>
         {movies.map((movie) => (
           <li key={movie.id}>{movie.title}</li>
