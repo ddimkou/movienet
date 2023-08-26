@@ -28,7 +28,7 @@ const Sidebar = () => {
     >
       {genres.map((genre) => (
         // <div key={genre.id}>{genre.name}</div>
-        <button className="genre-btn" key={genre.id}>
+        <button className="genre-btn btn" key={genre.id}>
           {genre.name}
         </button>
       ))}
