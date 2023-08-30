@@ -80,6 +80,13 @@ body {
   background-color: #ff9800;
   color: #fff;
 }
+.genre-btn.selected {
+  background-color: #ff9800;
+  color: #fff;
+  box-shadow: none;
+  transform: scale(1.05);
+  border: 1px solid #ff9800;
+}
 
 /* Movie Grid */
 .movie-card {
