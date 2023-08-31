@@ -37,8 +37,10 @@ import apiClient from "../services/api-client";
 import { CanceledError } from "axios";
 
 export interface Movie {
+  // title:fetched movies by genre / name:fetched movies search
   id: number;
   title: string;
+  name: string;
   poster_path: string;
   vote_average: number;
 }
