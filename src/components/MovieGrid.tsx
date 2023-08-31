@@ -30,7 +30,7 @@
 // };
 
 // export default MovieGrid;
-import { Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import useMovies from "../hooks/useMovies";
 import MovieCard from "./MovieCard";
 import Pagination from "@mui/material/Pagination";
@@ -64,26 +64,30 @@ const MovieGrid = ({ selectedOption }: MovieGridProps) => {
   const displayPageRange = Math.min(15, totalPages);
 
   return (
-    <Stack
-      direction="row"
-      flexWrap="wrap"
-      justifyContent="center"
-      alignItems="center"
-      gap={3}
-      pt={8}
-    >
-      {error ? <Typography>{error}</Typography> : null}
-      {movies.map((movie) => (
-        <MovieCard key={movie.id} movie={movie} />
-      ))}
-      <Pagination
-        size="large"
-        count={displayPageRange}
-        page={currentPage}
-        onChange={handlePageChange}
-        sx={{ mt: 10, mb: 5 }}
-      />
-    </Stack>
+    <>
+      <Stack
+        direction="row"
+        flexWrap="wrap"
+        justifyContent="center"
+        alignItems="center"
+        gap={3}
+        pt={8}
+      >
+        {error ? <Typography>{error}</Typography> : null}
+        {movies.map((movie) => (
+          <MovieCard key={movie.id} movie={movie} />
+        ))}
+      </Stack>
+      <Box display="flex" justifyContent="center">
+        <Pagination
+          size="large"
+          count={displayPageRange}
+          page={currentPage}
+          onChange={handlePageChange}
+          sx={{ mt: 10, mb: 5 }}
+        />{" "}
+      </Box>
+    </>
   );
 };
 
