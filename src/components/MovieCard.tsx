@@ -24,6 +24,9 @@ const MovieCard = ({ movie }: Props) => {
           textAlign="center"
           bgcolor="rgba(0, 0, 0, 0.6)"
           p={1}
+          width="18px"
+          height="18px"
+          borderRadius="50%"
         >
           {movie.vote_average}
         </Typography>
