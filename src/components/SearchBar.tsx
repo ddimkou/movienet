@@ -1,25 +1,15 @@
+import React, { useState } from "react";
 import { IconButton, Paper } from "@mui/material";
 import { Search } from "@mui/icons-material";
-import { Movie } from "../hooks/useMovies";
-import useMoviesSearch from "../hooks/useMoviesSearch";
 import { useNavigate } from "react-router-dom";
 
-interface inputProps {
-  inputValue: string;
-  setInputValue: (value: string) => void;
-  setSearchData: (value: Movie[]) => void;
-}
-const SearchBar = ({
-  inputValue,
-  setInputValue,
-  setSearchData,
-}: inputProps) => {
-  const { searchResults } = useMoviesSearch(inputValue);
+const SearchBar = () => {
+  const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
+
   const handleSearch = (e: React.MouseEvent | React.KeyboardEvent) => {
     if (e.type === "click" || (e as React.KeyboardEvent).key === "Enter") {
       e.preventDefault();
-      setSearchData(searchResults);
       navigate(`/search/${inputValue}`);
     }
   };

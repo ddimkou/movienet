@@ -4,27 +4,16 @@ import Navbar from "./components/Navbar";
 import Feed from "./components/Feed";
 import MovieDetail from "./components/MovieDetail";
 import SearchFeed from "./components/SearchFeed";
-import { useState } from "react";
-import { Movie } from "./hooks/useMovies";
 
 const App = () => {
-  const [inputValue, setInputValue] = useState("");
-  const [searchData, setSearchData] = useState<Movie[]>([]);
   return (
     <BrowserRouter>
       <Box sx={{ backgroundColor: "#D8D9DA", minHeight: "100vh" }}>
-        <Navbar
-          inputValue={inputValue}
-          setInputValue={setInputValue}
-          setSearchData={setSearchData}
-        />
+        <Navbar />
         <Routes>
           <Route path="/" element={<Feed />} />
           <Route path="/movie/:id" element={<MovieDetail />} />
-          <Route
-            path="/search/:searchTerm"
-            element={<SearchFeed searchData={searchData} />}
-          />
+          <Route path="/search/:searchTerm" element={<SearchFeed />} />
         </Routes>
       </Box>
     </BrowserRouter>

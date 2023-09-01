@@ -1,14 +1,11 @@
 import { Stack, Typography } from "@mui/material";
-import { Movie } from "../hooks/useMovies";
 import { useParams } from "react-router-dom";
 import MovieCard from "./MovieCard";
+import useMoviesSearch from "../hooks/useMoviesSearch";
 
-interface SearchFeedProps {
-  searchData: Movie[];
-}
-
-const SearchFeed = ({ searchData }: SearchFeedProps) => {
-  const { searchTerm } = useParams<{ searchTerm: string }>();
+const SearchFeed = () => {
+  const { searchTerm } = useParams<{ searchTerm: string | undefined }>();
+  const { searchResults } = useMoviesSearch(searchTerm || "");
 
   return (
     <Stack direction="column" alignItems="center" pt={8} spacing={3}>
@@ -20,7 +17,7 @@ const SearchFeed = ({ searchData }: SearchFeedProps) => {
           color: "#333",
           marginBottom: "20px",
           width: "60%",
-          borderBottom: " 2px solid #ff9800",
+          borderBottom: "2px solid #ff9800",
         }}
       >
         Search Results for "
@@ -33,7 +30,7 @@ const SearchFeed = ({ searchData }: SearchFeedProps) => {
         alignItems="center"
         spacing={3}
       >
-        {searchData.map((movie) => (
+        {searchResults.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </Stack>
