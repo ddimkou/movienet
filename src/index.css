@@ -1,13 +1,10 @@
-/* scrollbar (sidebar is sticky and had another scrollbar)*/
-
-/* ::-webkit-scrollbar {
-  width: 0.5rem;
+/* normalize */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
-
-::-webkit-scrollbar-thumb {
-  background-color: transparent;
-} */
-
 ::-webkit-scrollbar {
   width: 0px;
   height: 5px;
@@ -23,18 +20,94 @@
   background-color: transparent;
 }
 
-/* normalize */
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-}
+/*  N A V B A R -START*/
 
 .logo {
-  padding-top: 0.5em;
+  padding: 0.5em 0;
+  margin-right: 10px;
+  vertical-align: middle;
 }
-/* specific */
+/* MovieNet text */
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.glitch-text {
+  display: inline-block;
+  animation: glitch 1s linear infinite;
+  font-size: 30px;
+  letter-spacing: -2px;
+  vertical-align: middle;
+  color: #ff9800;
+}
+@media (max-width: 767px) {
+  .glitch-text {
+    display: none;
+  }
+}
+@keyframes glitch {
+  2%,
+  64% {
+    transform: translate(2px, 0) skew(0deg);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0) skew(0deg);
+  }
+  62% {
+    transform: translate(0, 0) skew(5deg);
+  }
+}
+
+.glitch-text:before,
+.glitch-text:after {
+  content: attr(title);
+  position: absolute;
+  left: 0;
+}
+
+.glitch-text:before {
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop {
+  2%,
+  64% {
+    transform: translate(2px, -2px);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 2px);
+  }
+  62% {
+    transform: translate(13px, -1px) skew(-13deg);
+  }
+}
+
+.glitch-text:after {
+  animation: glitchBottom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBottom {
+  2%,
+  64% {
+    transform: translate(-2px, 0);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0);
+  }
+  62% {
+    transform: translate(-22px, 5px) skew(21deg);
+  }
+}
+
+/* search-bar */
 .search-bar {
   border: none;
   outline: none;
@@ -53,7 +126,9 @@ body {
     min-width: 450px;
   }
 }
+/* N A V B A R  -END */
 
+/* S I D E B A R  -START*/
 /* Genre Button */
 .genre-btn {
   padding: 10px;
@@ -88,7 +163,9 @@ body {
   border: 1px solid #ff9800;
 }
 
-/* Movie Grid */
+/* S I D E B A R -END */
+
+/* M A I N -START */
 .movie-card {
   height: 300px;
   width: 200px;
