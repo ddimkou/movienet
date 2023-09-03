@@ -8,7 +8,13 @@ const SearchFeed = () => {
   const { searchResults } = useMoviesSearch(searchTerm || "");
 
   return (
-    <Stack direction="column" alignItems="center" pt={8} spacing={3}>
+    <Stack
+      direction="column"
+      alignItems="center"
+      pt={8}
+      spacing={3}
+      minHeight="60vh"
+    >
       <Typography
         variant="h4"
         sx={{
