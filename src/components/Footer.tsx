@@ -1,5 +1,6 @@
 import { Stack, Typography } from "@mui/material";
 import TmdbLogo from "../assets/tmdb.svg";
+
 const Footer = () => {
   return (
     <Stack
@@ -8,15 +9,25 @@ const Footer = () => {
       justifyContent="center"
       alignItems="center"
       color="white"
-      sx={{ width: "100%", height: "15em", backgroundColor: "#272829" }}
+      sx={{
+        width: "100%",
+        height: "15em",
+        backgroundColor: "#272829",
+      }}
     >
-      <img src={TmdbLogo} alt="The Movie DB" width="30%" />
-      <Typography variant="body1" marginTop="2em">
+      <img src={TmdbLogo} alt="The Movie DB" width="35%" />
+
+      <Typography
+        marginTop="2em"
+        sx={{
+          textAlign: "center",
+          fontSize: {
+            xs: "0.7rem", // Define smaller font size for extra small screens
+            sm: "1rem", // Default font size for small and larger screens
+          },
+        }}
+      >
         This product uses the TMDB API but is not endorsed or certified by TMDB.
-      </Typography>
-      <Typography variant="body1">
-        The Movie Database is a comprehensive and user-friendly platform for
-        movies information.
       </Typography>
     </Stack>
   );
