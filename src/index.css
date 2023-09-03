@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 ::-webkit-scrollbar {
   width: 0px;
@@ -130,10 +130,12 @@ body {
 
 /* S I D E B A R  -START*/
 /* Genre Button */
+
 .genre-btn {
-  padding: 10px;
+  padding: 7px 10px;
   margin: 5px;
-  color: #61677a;
+  color: #5f544d;
+  font-weight: 600;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
