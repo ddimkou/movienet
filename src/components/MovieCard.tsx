@@ -17,7 +17,7 @@ const MovieCard = ({ movie }: Props) => {
         image={imageUrl}
         alt={movie.title}
       />
-      <Box sx={{ position: "absolute", top: 0, right: 0 }}>
+      {/* <Box sx={{ position: "absolute", top: 0, right: 0 }}>
         <Typography
           color="white"
           variant="body2"
@@ -30,9 +30,9 @@ const MovieCard = ({ movie }: Props) => {
         >
           {movie.vote_average}
         </Typography>
-      </Box>
+      </Box> */}
       <div className="overlay">
-        <Typography color="white" variant="h6" textAlign="center">
+        <Typography color="white" variant="h6" textAlign="center" p={1}>
           {movie.title}
         </Typography>
       </div>
