@@ -200,3 +200,19 @@ body {
 .movie-card:hover .overlay {
   opacity: 1;
 }
+
+/* /movies/:id */
+.error-message-id {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 65vh;
+  text-align: center;
+  font-size: 24px;
+  color: #ff0000; /* You can choose the color you prefer */
+}
+
+.error-message-id p {
+  margin: 0;
+}
