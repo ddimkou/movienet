@@ -29,17 +29,35 @@ const SearchFeed = () => {
         Search Results for "
         <span style={{ color: "#df8600" }}>{searchTerm}</span>"
       </Typography>
-      <Stack
-        direction="row"
-        flexWrap="wrap"
-        justifyContent="center"
-        alignItems="center"
-        spacing={3}
-      >
-        {searchResults.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
-        ))}
-      </Stack>
+      {searchResults.length === 0 ? (
+        <Stack alignItems="center" spacing={1}>
+          <span role="img" aria-label="Sad Face" style={{ fontSize: "2rem" }}>
+            😞
+          </span>
+          <Typography
+            variant="h5"
+            sx={{
+              fontWeight: "bold",
+              textAlign: "center",
+              color: "#333",
+            }}
+          >
+            No movies matching your search.
+          </Typography>
+        </Stack>
+      ) : (
+        <Stack
+          direction="row"
+          flexWrap="wrap"
+          justifyContent="center"
+          alignItems="center"
+          spacing={3}
+        >
+          {searchResults.map((movie) => (
+            <MovieCard key={movie.id} movie={movie} />
+          ))}
+        </Stack>
+      )}
     </Stack>
   );
 };

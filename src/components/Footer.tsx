@@ -9,6 +9,7 @@ const Footer = () => {
       justifyContent="center"
       alignItems="center"
       color="white"
+      mt={5}
       sx={{
         width: "100%",
         height: "15em",
