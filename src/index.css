@@ -202,6 +202,11 @@ body {
 }
 
 /* /movies/:id */
+
+.movie-details {
+  margin: 1em;
+}
+/* error */
 .error-message-id {
   display: flex;
   flex-direction: column;
@@ -215,4 +220,71 @@ body {
 
 .error-message-id p {
   margin: 0;
+}
+
+/* success*/
+
+.movie-details {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  gap: 20px; /* Add spacing between the image and info */
+  margin: 20px; /* Add margin for spacing around the section */
+}
+
+/* Image div */
+.details-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 40%;
+  text-align: center;
+}
+
+.details-image img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ff9800;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+
+.details-image .official-site-link {
+  background-color: #ffae00;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+/* Information div */
+/* Style headers inside details-info */
+.details-info h1 {
+  font-size: 28px; /* Increase the font size */
+  font-weight: bold; /* Add bold font weight */
+  color: #333; /* Dark text color */
+}
+
+.details-info h3 {
+  font-size: 20px; /* Increase the font size */
+  font-weight: normal; /* Use a normal font weight */
+  color: #333; /* Slightly muted text color */
+}
+
+.details-info {
+  max-width: 50%;
+}
+
+.other-informations h4 {
+  font-size: 16px;
+  margin-top: 3em;
+}
+
+.other-informations p {
+  margin: 5px 0;
 }

@@ -19,35 +19,8 @@ export interface Details {
   budget: number;
   homepage: string;
 }
-// interface FetchDetails {
-//   results: Details[];
-// }
-
-// const useDetailsById = (id: number) => {
-//   const [details, setDetails] = useState<Details[] | null>(null);
-//   const [error, setError] = useState("");
-
-//   useEffect(() => {
-//     const controller = new AbortController();
-//     apiClient
-//       .get<FetchDetails>(`/movie/${id}?language=en-US`, {
-//         signal: controller.signal,
-//       })
-//       .then((res) => {
-//         setDetails(res.data.results);
-//       })
-//       .catch((error) => {
-//         if (error instanceof CanceledError) return;
-//         setError(error.message);
-//         setDetails([]);
-//       });
-//     return () => controller.abort();
-//   }, [id]);
-
-//   return { details, error };
-// };
 const useDetailsById = (id: number) => {
-  const [details, setDetails] = useState<Details | null>(null); // Use null instead of an array
+  const [details, setDetails] = useState<Details | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -58,7 +31,7 @@ const useDetailsById = (id: number) => {
       })
       .then((res) => {
         if (res.data) {
-          setDetails(res.data); // Set details directly as an object, not an array
+          setDetails(res.data);
         } else {
           setError("No movie details found");
         }
