@@ -23,8 +23,8 @@ const Footer = () => {
         sx={{
           textAlign: "center",
           fontSize: {
-            xs: "0.7rem", // Define smaller font size for extra small screens
-            sm: "1rem", // Default font size for small and larger screens
+            xs: "0.7rem",
+            sm: "1rem",
           },
         }}
       >

@@ -1,4 +1,4 @@
-import { Box, Card, CardMedia } from "@mui/material";
+import { Card, CardMedia } from "@mui/material";
 import { Movie } from "../hooks/useMovies";
 import Typography from "@mui/material/Typography";
 
@@ -17,20 +17,7 @@ const MovieCard = ({ movie }: Props) => {
         image={imageUrl}
         alt={movie.title}
       />
-      {/* <Box sx={{ position: "absolute", top: 0, right: 0 }}>
-        <Typography
-          color="white"
-          variant="body2"
-          textAlign="center"
-          bgcolor="rgba(0, 0, 0, 0.6)"
-          p={1}
-          width="18px"
-          height="18px"
-          borderRadius="50%"
-        >
-          {movie.vote_average}
-        </Typography>
-      </Box> */}
+
       <div className="overlay">
         <Typography color="white" variant="h6" textAlign="center" p={1}>
           {movie.title}
