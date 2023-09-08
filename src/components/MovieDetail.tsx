@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import useDetailsById from "../hooks/useDetailsById";
 import noImage from "../assets/Image_not_available.png";
+import { Button, Stack, Typography } from "@mui/material";
 
 const MovieDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -30,40 +31,45 @@ const MovieDetail = () => {
         </div>
       ) : (
         details && (
-          <div className="movie-details">
-            <div className="details-image">
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            spacing={3}
+            margin={3}
+            minHeight="70vh"
+            alignItems="center"
+          >
+            <Stack className="details-image" display="flex" alignItems="center">
               <img src={imageUrl} alt={details.original_title} />
               <a href={details.homepage}>
-                <button className="official-site-link">Official site</button>
+                <Button className="official-site-link">Official site</Button>
               </a>
-            </div>
-
-            <div className="details-info">
-              <h1>{details.original_title}</h1>
-              <h3>{details.tagline}</h3>
-              <div className="other-information">
-                <p>
+            </Stack>
+            <Stack className="details-info">
+              <Typography variant="h4">{details.original_title}</Typography>
+              <Typography variant="h6">{details.tagline}</Typography>
+              <Stack className="other-information">
+                <Typography variant="body1">
                   <strong>Date:</strong> {formattedReleaseDate}
-                </p>
-                <p>
+                </Typography>
+                <Typography variant="body1">
                   <strong>Vote Average:</strong>{" "}
                   {details.vote_average.toFixed(2)}
-                </p>
-                <p>
+                </Typography>
+                <Typography variant="body1">
                   <strong>Status:</strong> {details.status}
-                </p>
-                <p>
+                </Typography>
+                <Typography variant="body1">
                   <strong>Runtime:</strong> {details.runtime} minutes
-                </p>
-                <p>
+                </Typography>
+                <Typography variant="body1">
                   <strong>Overview:</strong> {details.overview}
-                </p>
-                <p>
+                </Typography>
+                <Typography variant="body1">
                   <strong>Budget:</strong> {formatBudget(details.budget)}
-                </p>
-              </div>
-            </div>
-          </div>
+                </Typography>
+              </Stack>
+            </Stack>
+          </Stack>
         )
       )}
     </div>
