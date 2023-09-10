@@ -224,11 +224,13 @@ body {
 
 /* success*/
 
+/* left side */
 .details-image img {
-  max-width: 100%;
-  height: auto;
+  /* max-width: 100%; */
+  /* height: auto; */
+  max-height: 30em;
   border: 1px solid #ff9800;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   margin-bottom: 10px;
 }
@@ -238,7 +240,6 @@ body {
   color: black;
   border: none;
   padding: 10px 20px;
-
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
