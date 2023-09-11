@@ -220,6 +220,3 @@ const MovieDetail = () => {
 };
 
 export default MovieDetail;
-
-// // tofix:
-// // md k lower, to title 8elei mt, to img exei ml gia kapio logo. 8elei fix st xxs size to img
