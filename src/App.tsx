@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Box } from "@mui/material";
 import Navbar from "./components/Navbar";
 import Feed from "./components/Feed";
-import MovieDetail from "./components/MovieDetail";
+import MovieDetail from "./components/MovieDetail/MovieDetail";
 import SearchFeed from "./components/SearchFeed";
 import Footer from "./components/Footer";
 
