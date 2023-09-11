@@ -65,7 +65,7 @@ const MovieInfo = ({ details, formattedReleaseDate }: MovieInfoProps) => {
           </Typography>
         ))}
       </Box>
-      <Box className="details-info" mt={8}>
+      <Box className="details-info" mt={4}>
         <Typography variant="body1" className="overview">
           <strong>Overview:</strong>
         </Typography>

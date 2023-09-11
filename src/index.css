@@ -226,13 +226,17 @@ body {
 
 /* left side */
 .details-image img {
-  /* max-width: 100%; */
-  /* height: auto; */
   max-height: 30em;
   border: 1px solid #ff9800;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   margin-bottom: 10px;
+}
+@media (max-width: 425px) {
+  .details-image img {
+    max-width: 200px; /* Set the width to 150px on smaller screens */
+    max-height: auto; /* Allow the height to adjust proportionally */
+  }
 }
 
 .details-image .official-site-link {
@@ -246,6 +250,7 @@ body {
   border-radius: 20px;
   transition: background-color 0.3s, transform 0.2s;
   text-decoration: none;
+  margin-bottom: 3em;
 }
 .official-site-link:hover {
   transform: scale(1.05);

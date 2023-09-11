@@ -12,7 +12,6 @@ const MovieImage = ({ imageUrl, homepage }: MovieImageProps) => {
       display="flex"
       flexDirection="column"
       alignItems="center"
-      ml={2}
     >
       <img src={imageUrl} alt="Movie Poster" />
       <a href={homepage} target="_blank" rel="noopener noreferrer">
