@@ -158,18 +158,21 @@
 
 // MovieDetail.tsx
 
+import { Box, Stack } from "@mui/material";
 import { useParams } from "react-router-dom";
 import useDetailsById from "../../hooks/useDetailsById";
+import useActorsById from "../..//hooks/useActorsById";
 import noImage from "../../assets/Image_not_available.png";
-import { Stack } from "@mui/material";
 import MovieImage from "./MovieImage";
 import MovieInfo from "./MovieInfo";
+import MovieCast from "./MovieCast";
 
 const MovieDetail = () => {
   const { id } = useParams<{ id: string }>();
   const { details, error } = useDetailsById(Number(id));
+  const { actors } = useActorsById(Number(id));
 
-  const imageUrl = details?.poster_path
+  const movieImageUrl = details?.poster_path
     ? `https://image.tmdb.org/t/p/w500${details.poster_path}`
     : noImage;
 
@@ -191,28 +194,34 @@ const MovieDetail = () => {
         </div>
       ) : (
         details && (
-          <Stack
-            display="flex"
-            justifyContent="center"
-            width="100%"
-            mt={3}
-            minHeight="65vh"
-            sx={{
-              flexDirection: {
-                xs: "column",
-                md: "row",
-              },
-            }}
-          >
-            {/* Left side */}
-            <MovieImage imageUrl={imageUrl} homepage={details.homepage} />
+          <Box>
+            <Stack
+              display="flex"
+              justifyContent="center"
+              width="100%"
+              mt={3}
+              minHeight="65vh"
+              sx={{
+                flexDirection: {
+                  xs: "column",
+                  md: "row",
+                },
+              }}
+            >
+              {/* Left side */}
+              <MovieImage
+                imageUrl={movieImageUrl}
+                homepage={details.homepage}
+              />
 
-            {/* Right side */}
-            <MovieInfo
-              details={details}
-              formattedReleaseDate={formattedReleaseDate}
-            />
-          </Stack>
+              {/* Right side */}
+              <MovieInfo
+                details={details}
+                formattedReleaseDate={formattedReleaseDate}
+              />
+            </Stack>
+            <MovieCast actors={actors} />
+          </Box>
         )
       )}
     </div>

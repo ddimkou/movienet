@@ -11,30 +11,30 @@ export interface Actors {
 }
 
 const useActorsById = (id: number) => {
-  const [actors, setActors] = useState<Actors | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [actors, setActors] = useState<Actors | null>({ cast: [] });
+  const [actorsError, setActorsError] = useState<string | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();
     apiClient
-      .get<Actors>(`/movie/${id}?language=en-US`, {
+      .get<Actors>(`/movie/${id}/credits`, {
         signal: controller.signal,
       })
       .then((res) => {
         if (res.data) {
           setActors(res.data);
         } else {
-          setError("No movie details found");
+          setActorsError("No movie details found");
         }
       })
       .catch((error) => {
         if (error instanceof CanceledError) return;
-        setError(error.message);
+        setActorsError(error.message);
       });
     return () => controller.abort();
   }, [id]);
 
-  return { actors, error };
+  return { actors, actorsError };
 };
 
 export default useActorsById;
