@@ -16,20 +16,20 @@ const MovieCast = ({ actors }: MovieCastProps) => {
     return <div>No cast information available.</div>;
   }
 
-  const displayedActors = actors.cast.slice(0, 5);
+  const displayedActors = actors.cast.slice(0, 6);
 
   return (
-    <Box mt={3} textAlign="center">
+    <Box mt={10} textAlign="center">
       <Typography variant="h6" gutterBottom>
         <strong>Top Cast</strong>
       </Typography>
-      <Box display="flex" flexWrap="wrap" justifyContent="center">
+      <Box display="flex" flexWrap="wrap" justifyContent="center" mt={4}>
         {displayedActors.map((actor, index) => (
           <Box key={index} width="150px" textAlign="center">
             <Avatar
               alt={actor.name}
               src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
-              sx={{ width: 80, height: 80, margin: "0 auto" }}
+              sx={{ width: 100, height: 100, margin: "5px auto" }}
             />
             <Typography variant="subtitle2">{actor.name}</Typography>
           </Box>
