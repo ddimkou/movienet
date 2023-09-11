@@ -22,6 +22,7 @@ const MovieDetail = () => {
   // const formatBudget = (budget: number) => {
   //   return budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + "$";
   // };
+  console.log(details?.genres);
   return (
     <div>
       {error ? (
@@ -53,7 +54,7 @@ const MovieDetail = () => {
               ml={2}
             >
               <img src={imageUrl} alt={details.original_title} />
-              <a href={details.homepage}>
+              <a href={details.homepage} target="_blank">
                 <Button className="official-site-link">Official site</Button>
               </a>
             </Box>
@@ -67,7 +68,7 @@ const MovieDetail = () => {
                 maxWidth: { xs: "100%", md: "650px" },
               }}
             >
-              <Box mb={5}>
+              <Box mb={2}>
                 <Box display="flex">
                   <Typography
                     variant="h4"
@@ -91,6 +92,23 @@ const MovieDetail = () => {
                   {details.tagline}
                 </Typography>
               </Box>
+              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
+                {details.genres.map((genre, index) => (
+                  <Typography
+                    key={index}
+                    style={{
+                      backgroundColor: "#888",
+                      color: "#fff",
+                      padding: "2px 6px",
+                      borderRadius: "4px",
+                      fontSize: "12px",
+                      marginBottom: "4em",
+                    }}
+                  >
+                    {genre.name}
+                  </Typography>
+                ))}
+              </Box>
 
               <Box className="details-info">
                 <Typography variant="body1" className="overview">
@@ -102,22 +120,22 @@ const MovieDetail = () => {
                 <Box
                   className="other-information"
                   display="flex"
-                  gap={2}
-                  mt={4}
+                  justifyContent="space-around"
+                  mt={6}
                 >
-                  <Typography variant="body1" style={{ color: "#888" }}>
+                  <Typography variant="body2" style={{ color: "#666" }}>
                     <strong>
                       <span style={{ color: "#000" }}>Date:</span>
                     </strong>{" "}
                     {formattedReleaseDate}
                   </Typography>
-                  <Typography variant="body1" style={{ color: "#888" }}>
+                  <Typography variant="body2" style={{ color: "#666" }}>
                     <strong>
                       <span style={{ color: "#000" }}>Status:</span>
                     </strong>{" "}
                     {details.status}
                   </Typography>
-                  <Typography variant="body1" style={{ color: "#888" }}>
+                  <Typography variant="body2" style={{ color: "#666" }}>
                     <strong>
                       <span style={{ color: "#000" }}>Runtime:</span>
                     </strong>{" "}
@@ -134,3 +152,6 @@ const MovieDetail = () => {
 };
 
 export default MovieDetail;
+
+// tofix:
+// md k lower, to title 8elei mt, to img exei ml gia kapio logo
