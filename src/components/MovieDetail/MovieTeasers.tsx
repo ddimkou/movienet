@@ -1,23 +1,3 @@
-// import { Trailer } from "../../hooks/useTrailerById";
-
-// interface MovieTeasersProps {
-//   trailers: Trailer[];
-// }
-
-// const MovieTeasers = ({ trailers }: MovieTeasersProps) => {
-//   return (
-//     <div>
-//       {trailers.map((trailer) => (
-//         <div key={trailer.id}>
-//           Trailer Key: {trailer.key}
-//           {trailer.name}
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default MovieTeasers;
 import { Box, Typography } from "@mui/material";
 import { Trailer } from "../../hooks/useTrailerById";
 
@@ -26,12 +6,17 @@ interface MovieTeasersProps {
 }
 
 const MovieTeasers = ({ trailers }: MovieTeasersProps) => {
+  // filter of video is Teaser only
+  const teaserTrailers = trailers.filter(
+    (trailer) => trailer.type === "Teaser"
+  );
+
   return (
     <Box className="trailers-container" mt={5}>
       <Typography variant="h6" textAlign="center" width="100%">
         <strong>Teasers</strong>
       </Typography>
-      {trailers.slice(0, 3).map((trailer) => (
+      {teaserTrailers.slice(0, 3).map((trailer) => (
         <Box key={trailer.id} className="trailer-card" display="flex">
           <iframe
             width="280"

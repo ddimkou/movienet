@@ -6,6 +6,7 @@ export interface Trailer {
   key: string | null;
   id: number | null;
   name: string | null;
+  type: string;
 }
 
 const useTrailerById = (id: number) => {
