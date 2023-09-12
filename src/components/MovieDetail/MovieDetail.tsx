@@ -166,7 +166,6 @@ import noImage from "../../assets/Image_not_available.png";
 import MovieImage from "./MovieImage";
 import MovieInfo from "./MovieInfo";
 import MovieCast from "./MovieCast";
-import MovieTrailer from "./MovieTrailer";
 
 const MovieDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -222,7 +221,6 @@ const MovieDetail = () => {
               />
             </Stack>
             <MovieCast actors={actors} />
-            <MovieTrailer />
           </Box>
         )
       )}

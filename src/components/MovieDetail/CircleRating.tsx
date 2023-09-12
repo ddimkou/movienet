@@ -12,7 +12,7 @@ const CircleRating = ({ rating }: CircleRatingProps) => {
   if (rating >= 8) {
     pathColor = "green";
   } else if (rating >= 7) {
-    pathColor = "blue";
+    pathColor = "orange";
   } else {
     pathColor = "red";
   }

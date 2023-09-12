@@ -19,7 +19,7 @@ const MovieCast = ({ actors }: MovieCastProps) => {
   const displayedActors = actors.cast.slice(0, 6);
 
   return (
-    <Box mt={10} textAlign="center">
+    <Box mt={4} textAlign="center">
       <Typography variant="h6" gutterBottom>
         <strong>Top Cast</strong>
       </Typography>

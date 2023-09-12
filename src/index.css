@@ -287,3 +287,11 @@ body {
     stroke: transparent;
   }
 }
+.play-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  color: orange;
+}
