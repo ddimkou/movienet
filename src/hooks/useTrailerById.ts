@@ -5,6 +5,7 @@ import { CanceledError } from "axios";
 export interface Trailer {
   key: string | null;
   id: number | null;
+  name: string | null;
 }
 
 const useTrailerById = (id: number) => {

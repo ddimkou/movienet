@@ -20,7 +20,7 @@ const MovieCast = ({ actors }: MovieCastProps) => {
 
   return (
     <Box mt={4} textAlign="center">
-      <Typography variant="h6" gutterBottom>
+      <Typography variant="h6">
         <strong>Top Cast</strong>
       </Typography>
       <Box display="flex" flexWrap="wrap" justifyContent="center" mt={4}>
