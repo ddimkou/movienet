@@ -1,6 +1,7 @@
 import { Box, Stack, Typography } from "@mui/material";
 import CircleRating from "./CircleRating";
 import MovieTrailer from "./MovieTrailer";
+import { Trailer } from "../../hooks/useTrailerById";
 
 interface MovieInfoProps {
   details: {
@@ -13,9 +14,14 @@ interface MovieInfoProps {
     runtime: number;
   };
   formattedReleaseDate: string | null;
+  trailers: Trailer[];
 }
 
-const MovieInfo = ({ details, formattedReleaseDate }: MovieInfoProps) => {
+const MovieInfo = ({
+  details,
+  formattedReleaseDate,
+  trailers,
+}: MovieInfoProps) => {
   return (
     <Stack
       display="flex"
@@ -51,7 +57,7 @@ const MovieInfo = ({ details, formattedReleaseDate }: MovieInfoProps) => {
       </Box>
       <Box display="flex" alignItems="center" gap={1}>
         <CircleRating rating={+details.vote_average.toFixed(1)} />
-        <MovieTrailer />
+        <MovieTrailer trailers={trailers} />
       </Box>
       <Box mt={3} sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
         {details.genres.map((genre, index) => (

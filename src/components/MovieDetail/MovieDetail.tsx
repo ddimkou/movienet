@@ -61,6 +61,7 @@ const MovieDetail = () => {
               <MovieInfo
                 details={details}
                 formattedReleaseDate={formattedReleaseDate}
+                trailers={trailers}
               />
             </Stack>
             <MovieCast actors={actors} />
