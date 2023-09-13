@@ -51,7 +51,7 @@ const SearchFeed = () => {
           flexWrap="wrap"
           justifyContent="center"
           alignItems="center"
-          spacing={3}
+          gap={3}
         >
           {searchResults.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />
