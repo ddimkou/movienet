@@ -13,7 +13,15 @@ interface MovieCastProps {
 
 const MovieCast = ({ actors }: MovieCastProps) => {
   if (!actors || !actors.cast || actors.cast.length === 0) {
-    return <div>No cast information available.</div>;
+    return (
+      <Box textAlign="center">
+        {" "}
+        <Typography variant="h6">
+          <strong>Top Cast</strong>
+        </Typography>
+        <Typography>No cast cast information available 😞</Typography>
+      </Box>
+    );
   }
 
   const displayedActors = actors.cast.slice(0, 6);
