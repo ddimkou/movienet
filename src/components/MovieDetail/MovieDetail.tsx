@@ -8,12 +8,15 @@ import MovieImage from "./MovieImage";
 import MovieInfo from "./MovieInfo";
 import MovieCast from "./MovieCast";
 import MovieTeasers from "./MovieTeasers";
+import MovieRec from "./MovieRec";
+import useRecommendation from "../../hooks/useRecommendation";
 
 const MovieDetail = () => {
   const { id } = useParams<{ id: string }>();
   const { details, error } = useDetailsById(Number(id));
   const { actors } = useActorsById(Number(id));
   const { trailers } = useTrailerById(Number(id));
+  const { moviesRec } = useRecommendation(Number(id));
 
   const movieImageUrl = details?.poster_path
     ? `https://image.tmdb.org/t/p/w500${details.poster_path}`
@@ -66,6 +69,7 @@ const MovieDetail = () => {
             </Stack>
             <MovieCast actors={actors} />
             <MovieTeasers trailers={trailers} />
+            <MovieRec moviesRec={moviesRec} />
           </Box>
         )
       )}

@@ -9,20 +9,23 @@ interface Results {
   name: string;
   vote_average: number;
 }
-interface MovieRec {
-  results: Results;
+export interface MovieRecFetch {
+  results: Results[];
 }
 
 const useRecommendation = (id: number) => {
-  const [moviesRec, setMoviesRec] = useState<MovieRec | null>();
+  const [moviesRec, setMoviesRec] = useState<MovieRecFetch | null>(null);
   const [moviesRecError, setMoviesRecError] = useState<string | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();
     apiClient
-      .get<MovieRec>(`/movie/${id}/recommendations?language=en-US&page=1`, {
-        signal: controller.signal,
-      })
+      .get<MovieRecFetch>(
+        `/movie/${id}/recommendations?language=en-US&page=1`,
+        {
+          signal: controller.signal,
+        }
+      )
       .then((res) => {
         if (res.data) {
           setMoviesRec(res.data);
