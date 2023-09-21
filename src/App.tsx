@@ -5,6 +5,7 @@ import Feed from "./components/Feed";
 import MovieDetail from "./components/MovieDetail/MovieDetail";
 import SearchFeed from "./components/SearchFeed";
 import Footer from "./components/Footer";
+import Actor from "./components/Actor";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Feed />} />
           <Route path="/movie/:id" element={<MovieDetail />} />
+          <Route path="/actor/:id" element={<Actor />} />
           <Route path="/search/:searchTerm" element={<SearchFeed />} />
         </Routes>
         <Footer />

@@ -18,7 +18,7 @@ const useActorsInfo = (id: number) => {
   useEffect(() => {
     const controller = new AbortController();
     apiClient
-      .get<ActorInfo>(`/movie/${id}/credits`, {
+      .get<ActorInfo>(`/person/${id}`, {
         signal: controller.signal,
       })
       .then((res) => {
