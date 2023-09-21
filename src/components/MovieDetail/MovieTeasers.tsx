@@ -18,8 +18,8 @@ const MovieTeasers = ({ trailers }: MovieTeasersProps) => {
       </Typography>
 
       {teaserTrailers.length === 0 ? (
-        <Typography variant="body1" textAlign="center">
-          No teasers found 😞
+        <Typography variant="body1" textAlign="center" color="#777">
+          <strong>No teasers found 😞</strong>
         </Typography>
       ) : (
         teaserTrailers.slice(0, 3).map((trailer) => (
