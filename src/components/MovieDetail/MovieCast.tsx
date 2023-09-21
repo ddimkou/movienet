@@ -16,7 +16,7 @@ const MovieCast = ({ actors }: MovieCastProps) => {
     return (
       <Box textAlign="center">
         {" "}
-        <Typography variant="h6">
+        <Typography variant="h6" className="underline">
           <strong>Top Cast</strong>
         </Typography>
         <Typography>No cast cast information available 😞</Typography>
@@ -28,7 +28,7 @@ const MovieCast = ({ actors }: MovieCastProps) => {
 
   return (
     <Box mt={4} textAlign="center">
-      <Typography variant="h6">
+      <Typography variant="h6" className="underline">
         <strong>Top Cast</strong>
       </Typography>
       <Box display="flex" flexWrap="wrap" justifyContent="center" mt={4}>

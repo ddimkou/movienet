@@ -17,8 +17,8 @@ const MovieRec = ({ moviesRec }: MovieRecProps) => {
   // no movies
   if (!moviesRec || !moviesRec.results || moviesRec.results.length === 0) {
     return (
-      <Box mt={8} mb={20} textAlign="center">
-        <Typography variant="h6" width="100%">
+      <Box mt={15} mb={20} textAlign="center">
+        <Typography variant="h6" width="100%" className="underline">
           <strong>Recommended Movies</strong>
         </Typography>
         <Typography variant="body1" mt={5} color="#777">
@@ -28,12 +28,17 @@ const MovieRec = ({ moviesRec }: MovieRecProps) => {
     );
   }
 
-  // limited movies to only 6
+  // limited movies to only
   const limitedRec = moviesRec.results.slice(0, 6);
 
   return (
-    <Box mt={8} mb={20}>
-      <Typography variant="h6" textAlign="center" width="100%">
+    <Box mt={15} mb={20}>
+      <Typography
+        variant="h6"
+        textAlign="center"
+        width="100%"
+        className="underline"
+      >
         <strong>Recommended Movies</strong>
       </Typography>
       <Box

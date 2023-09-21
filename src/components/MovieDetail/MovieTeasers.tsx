@@ -12,8 +12,13 @@ const MovieTeasers = ({ trailers }: MovieTeasersProps) => {
   );
 
   return (
-    <Box className="trailers-container" mt={5}>
-      <Typography variant="h6" textAlign="center" width="100%">
+    <Box className="trailers-container" mt={15}>
+      <Typography
+        variant="h6"
+        textAlign="center"
+        width="100%"
+        className="underline"
+      >
         <strong>Teasers</strong>
       </Typography>
 
