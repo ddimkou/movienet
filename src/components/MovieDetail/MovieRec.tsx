@@ -1,12 +1,20 @@
 import { MovieRecFetch } from "../../hooks/useRecommendation";
 import MovieCard from "../MovieCard";
 import { Box, Typography } from "@mui/material";
+import { useEffect } from "react";
+import { scrollToTop } from "../../services/scrollToTop";
 
 interface MovieRecProps {
   moviesRec: MovieRecFetch | null;
 }
 
 const MovieRec = ({ moviesRec }: MovieRecProps) => {
+  // scroll to top smoothly
+  useEffect(() => {
+    scrollToTop();
+  }, [moviesRec]);
+
+  // no movies
   if (!moviesRec || !moviesRec.results || moviesRec.results.length === 0) {
     return (
       <Box mt={8} mb={20} textAlign="center">
@@ -20,6 +28,7 @@ const MovieRec = ({ moviesRec }: MovieRecProps) => {
     );
   }
 
+  // limited movies to only 6
   const limitedRec = moviesRec.results.slice(0, 6);
 
   return (
