@@ -1,8 +1,10 @@
 import { Avatar, Box, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 interface Actor {
   name: string;
   profile_path: string | null;
+  id: number;
 }
 
 interface MovieCastProps {
@@ -12,6 +14,12 @@ interface MovieCastProps {
 }
 
 const MovieCast = ({ actors }: MovieCastProps) => {
+  // navigate to actor's page
+  const navigate = useNavigate();
+  const handleActorClick = (actorId: number) => {
+    navigate(`/actor/${actorId}`);
+  };
+
   if (!actors || !actors.cast || actors.cast.length === 0) {
     return (
       <Box textAlign="center">
@@ -37,7 +45,13 @@ const MovieCast = ({ actors }: MovieCastProps) => {
             <Avatar
               alt={actor.name}
               src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
-              sx={{ width: 100, height: 100, margin: "5px auto" }}
+              sx={{
+                width: 100,
+                height: 100,
+                margin: "5px auto",
+                cursor: "pointer",
+              }} // added cursor style
+              onClick={() => handleActorClick(actor.id)} // added onClick handler
             />
             <Typography variant="subtitle2">{actor.name}</Typography>
           </Box>

@@ -1,11 +1,16 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import useActorsInfo from "../hooks/useActorsInfo";
 import { useParams } from "react-router-dom";
-
+import { useState } from "react";
 const Actor = () => {
   const { id } = useParams();
   const { actorInfo } = useActorsInfo(Number(id));
+  const [showFullBiography, setShowFullBiography] = useState(false);
 
+  //   show more button
+  const toggleBiography = () => {
+    setShowFullBiography(!showFullBiography);
+  };
   return (
     <Stack
       display="flex"
@@ -58,21 +63,33 @@ const Actor = () => {
           >
             {actorInfo?.name}
           </Typography>
-          <Typography
-            fontSize={12}
-            mb={2}
-            fontWeight="bold"
-            sx={{
-              fontStyle: "italic",
-              textTransform: "uppercase",
-            }}
-          >
+          <Typography fontSize={12} mb={2} fontWeight="bold" fontStyle="italic">
             {actorInfo?.birthday}
           </Typography>
         </Box>
 
         <Box className="details-info" mt={4}>
-          <Typography>{actorInfo?.biography}</Typography>
+          <Typography variant="body1">
+            {showFullBiography
+              ? actorInfo?.biography // Show full biography
+              : actorInfo?.biography?.slice(0, 600) ??
+                "Biography not available"}
+          </Typography>
+          {(actorInfo?.biography?.length ?? 0) > 600 && (
+            <Button
+              variant="text"
+              color="primary"
+              onClick={toggleBiography}
+              sx={{
+                textTransform: "none",
+                mt: 1,
+                textDecoration: "underline",
+                color: "#272829", // Setting color to orange
+              }}
+            >
+              {showFullBiography ? "Show Less" : "Show More"}
+            </Button>
+          )}
         </Box>
       </Stack>
     </Stack>

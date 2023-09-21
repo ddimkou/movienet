@@ -5,6 +5,7 @@ import { CanceledError } from "axios";
 interface Cast {
   name: string;
   profile_path: string;
+  id: number;
 }
 export interface Actors {
   cast: Cast[];
