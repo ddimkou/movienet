@@ -31,10 +31,12 @@ const Actor = () => {
         flexDirection="column"
         alignItems="center"
       >
-        <img
-          src={`https://image.tmdb.org/t/p/w300${actorInfo?.profile_path}`}
-          alt={`Image of actorInfo?.name`}
-        />
+        {actorInfo?.profile_path && (
+          <img
+            src={`https://image.tmdb.org/t/p/w300${actorInfo?.profile_path}`}
+            alt={`Image of ${actorInfo?.name}`}
+          />
+        )}
         <a
           href={`https://www.imdb.com/name/${actorInfo?.imdb_id}/`}
           target="_blank"
