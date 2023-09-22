@@ -5,7 +5,7 @@ import Feed from "./components/Feed";
 import MovieDetail from "./components/MovieDetail/MovieDetail";
 import SearchFeed from "./components/SearchFeed";
 import Footer from "./components/Footer";
-import Actor from "./components/Actor";
+import Actor from "./components/Actor/Actor";
 
 const App = () => {
   return (
