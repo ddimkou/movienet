@@ -1,4 +1,4 @@
-import { Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import useActorsInfo from "../../hooks/useActorsInfo";
 import { useParams } from "react-router-dom";
 import ActorImage from "./ActorImage";
@@ -8,22 +8,24 @@ const Actor = () => {
   const { actorInfo } = useActorsInfo(Number(id));
 
   return (
-    <Stack
-      display="flex"
-      justifyContent="center"
-      width="100%"
-      mt={3}
-      minHeight="65vh"
-      sx={{
-        flexDirection: {
-          xs: "column",
-          md: "row",
-        },
-      }}
-    >
-      <ActorImage actorInfo={actorInfo} />
-      <ActorInfo actorInfo={actorInfo} />
-    </Stack>
+    <Box>
+      <Stack
+        display="flex"
+        justifyContent="center"
+        width="100%"
+        mt={3}
+        minHeight="65vh"
+        sx={{
+          flexDirection: {
+            xs: "column",
+            md: "row",
+          },
+        }}
+      >
+        <ActorImage actorInfo={actorInfo} />
+        <ActorInfo actorInfo={actorInfo} />
+      </Stack>
+    </Box>
   );
 };
 

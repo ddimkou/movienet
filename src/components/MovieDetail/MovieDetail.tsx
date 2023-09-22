@@ -10,6 +10,7 @@ import MovieCast from "./MovieCast";
 import MovieTeasers from "./MovieTeasers";
 import MovieRec from "./MovieRec";
 import useRecommendation from "../../hooks/useRecommendation";
+import { formatDate } from "../../services/dateFormat";
 
 const MovieDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -24,11 +25,7 @@ const MovieDetail = () => {
 
   // Change Format
   const formattedReleaseDate = details
-    ? new Date(details.release_date).toLocaleDateString("en-GB", {
-        day: "2-digit",
-        month: "2-digit",
-        year: "2-digit",
-      })
+    ? formatDate(details.release_date)
     : null;
 
   return (

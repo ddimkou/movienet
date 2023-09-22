@@ -1,6 +1,6 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { useState } from "react";
-
+import { formatDate } from "../../services/dateFormat";
 interface ActorInfoProps {
   actorInfo: {
     name?: string;
@@ -38,7 +38,7 @@ const ActorInfo = ({ actorInfo }: ActorInfoProps) => {
           {actorInfo?.name}
         </Typography>
         <Typography fontSize={12} mb={2} fontWeight="bold" fontStyle="italic">
-          {actorInfo?.birthday}
+          {actorInfo?.birthday ? formatDate(actorInfo.birthday) : null}
         </Typography>
       </Box>
 
@@ -57,7 +57,7 @@ const ActorInfo = ({ actorInfo }: ActorInfoProps) => {
               textTransform: "none",
               mt: 1,
               textDecoration: "underline",
-              color: "#272829", // Setting color to orange
+              color: "#777",
             }}
           >
             {showFullBiography ? "Show Less" : "Show More"}
