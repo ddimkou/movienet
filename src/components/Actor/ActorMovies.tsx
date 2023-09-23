@@ -1,4 +1,5 @@
 import React from "react";
+import MovieCard from "../MovieCard";
 
 interface ActorMoviesProps {
   movieActor: {
@@ -9,15 +10,15 @@ interface ActorMoviesProps {
     }[];
   } | null;
 }
+
 const ActorMovies = ({ movieActor }: ActorMoviesProps) => {
+  const limitedMovies = movieActor?.cast.slice(0, 6);
+
   return (
     <div>
       <ul>
-        {movieActor?.cast.map((movie, index) => (
-          <li key={index}>
-            {movie.title}
-            {/* You can add more fields here, like images and so on */}
-          </li>
+        {limitedMovies?.map((movie, index) => (
+          <li key={index}>{movie.title}</li>
         ))}
       </ul>
     </div>
