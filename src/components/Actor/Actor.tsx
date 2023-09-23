@@ -3,9 +3,12 @@ import useActorsInfo from "../../hooks/useActorsInfo";
 import { useParams } from "react-router-dom";
 import ActorImage from "./ActorImage";
 import ActorInfo from "./ActorInfo";
+import ActorMovies from "./ActorMovies";
+import useMovieByActor from "../../hooks/useMovieByActor";
 const Actor = () => {
   const { id } = useParams();
   const { actorInfo } = useActorsInfo(Number(id));
+  const { movieActor } = useMovieByActor(Number(id));
 
   return (
     <Box>
@@ -25,6 +28,7 @@ const Actor = () => {
         <ActorImage actorInfo={actorInfo} />
         <ActorInfo actorInfo={actorInfo} />
       </Stack>
+      <ActorMovies movieActor={movieActor} />
     </Box>
   );
 };
