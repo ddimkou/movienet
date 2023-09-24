@@ -1,5 +1,6 @@
 import { Avatar, Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { scrollToTop } from "../../services/scrollToTop";
 
 interface Actor {
   name: string;
@@ -17,6 +18,8 @@ const MovieCast = ({ actors }: MovieCastProps) => {
   // navigate to actor's page
   const navigate = useNavigate();
   const handleActorClick = (actorId: number) => {
+    // Scroll to top of the page
+    scrollToTop();
     navigate(`/actor/${actorId}`);
   };
 
