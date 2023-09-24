@@ -44,9 +44,11 @@ const ActorInfo = ({ actorInfo }: ActorInfoProps) => {
 
       <Box className="details-info" mt={4}>
         <Typography variant="body1">
-          {showFullBiography
+          {showFullBiography || (actorInfo?.biography?.length ?? 0) <= 600
             ? actorInfo?.biography // Show full biography
-            : actorInfo?.biography?.slice(0, 600) ?? "Biography not available"}
+            : `${
+                actorInfo?.biography?.slice(0, 600) ?? "Biography not available"
+              }...`}
         </Typography>
         {(actorInfo?.biography?.length ?? 0) > 600 && (
           <Button
