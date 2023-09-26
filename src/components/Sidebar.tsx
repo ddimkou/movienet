@@ -21,13 +21,15 @@ const Sidebar = ({ selectedOption, setSelectedOption }: SidebarProps) => {
         overflowY: "auto",
         textAlign: "center",
         height: { sx: "auto", md: "100vh" },
+        marginTop: { xs: "auto", md: "2em" },
+
         flexDirection: {
           xs: "row",
           md: "column",
         },
         justifyContent: {
           xs: "flex-start",
-          md: "center",
+          md: "start",
         },
         alignItems: {
           xs: "center",

@@ -35,10 +35,18 @@ const genres = [
     id: 14,
     name: "Fantasy",
   },
+  {
+    id: 36,
+    name: "History",
+  },
 
   {
     id: 27,
     name: "Horror",
+  },
+  {
+    id: 10402,
+    name: "Music",
   },
 
   {
@@ -53,6 +61,10 @@ const genres = [
   {
     id: 53,
     name: "Thriller",
+  },
+  {
+    id: 10752,
+    name: "War",
   },
 ];
 
